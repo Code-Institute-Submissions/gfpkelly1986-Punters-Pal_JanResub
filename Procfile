@@ -1,0 +1,1 @@
+web: gunicorn punterspal.wsgi
