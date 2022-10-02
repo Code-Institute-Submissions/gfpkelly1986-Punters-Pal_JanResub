@@ -33,7 +33,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['punters-pal.herokuapp.com', 'localhost']
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -91,7 +90,7 @@ WSGI_APPLICATION = 'punterspal.wsgi.application'
 # }
 
 DATABASES = {
-    'default': Pdj_database_url.parse(os.environ.get('DATABASE_URL'))
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 }
 
 # Password validation
