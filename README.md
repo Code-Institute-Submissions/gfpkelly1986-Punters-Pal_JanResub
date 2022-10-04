@@ -1,108 +1,209 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Punters Pal - A diary structred for, and aimed at, the Horse-Racing Community.
 
-Welcome USER_NAME,
+  <p align="center">
+  <img src=""?raw=true alt=""></p>
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+# <p href="#intro" id="intro"> - Intended Purpose of This Website:</p>
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+  - Fill in: What the purpose of the website is.
 
-## Gitpod Reminders
+  - Fill in: What the purpose of the website is.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+  - Fill in: What the purpose of the website is.
 
-`python3 -m http.server`
+  - Fill in: What the purpose of the website is.
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
+## Table of contents
+- <a href="#ui">UI/UX</a>
+- <a href="#thm">Themes</a>
+- <a href="#epi">Epics</a>
+- <a href="#us">User Stories</a>
+- <a href="#de">Design</a>
+- <a href="#wire">Wireframes</a>
+- <a href="#erd">ERD Diagram</a>
+- <a href="#lf">Live Features</a>
+- <a href="#df">Desired Features</a>
+- <a href="#tpy">Testing(Python)</a>
+- <a href="#tjs">Testing(Javascript)</a>
+- <a href="#dep">Deployment</a>
+- <a href="#b">Bugs During Development</a>
+- <a href="#ub">Unsolved Bugs</a>
+- <a href="#tu">Technologies Used</a>
+- <a href="#cr">Credits</a>
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
 
-A blue button should appear to click: _Make Public_,
+<p align="right"><a href="#intro">Return to table of contents</a></p><p id="ui"></p>
 
-Another blue button should appear to click: _Open Browser_.
+# UI-UX
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+  ## Site Purpose
 
-To log into the Heroku toolbelt CLI:
+  - Explain site purpose
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+  ## Site Goal
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+  - Explain site goal
 
-------
+  ## Site Intended Audience
 
-## Release History
+  - Sites indended audience
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+<p align="right"><a href="#intro">Return to table of contents</a></p><p id="thm"></p>
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+# Themes
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+- Theme 1 
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+- Theme 2
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+- Theme 3
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+<p align="right"><a href="#intro">Return to table of contents</a></p><p id="epi"></p>
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+# Epics
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+- Epic 1 
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+- Epic 2
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+- Epic 3
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+<p align="right"><a href="#intro">Return to table of contents</a></p><p id="us"></p>
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+# User Stories
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+- As an Unregistered User - I want to be informed of this site's purpose quickly - So that I am encouraged to stay engaged.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+- As a Registered User - I want an option to sign up - So that if I am interested I can become a member of the site.
 
-------
+- As a Returning User - I want to be able to log into my account easily - So that I can focus on my goal.
 
-## FAQ about the uptime script
+<p align="right"><a href="#intro">Return to table of contents</a></p><p id="de"></p>
 
-**Why have you added this script?**
+# Design
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+  - Color Pallete
 
-**How will this affect me?**
+  - Fonts
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+<p align="center">
+  <img src=""?raw=true alt=""></p>
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+<p align="right"><a href="#intro">Return to table of contents</a></p><p id="wire"></p>
 
-**So….?**
+# Wireframes
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+  - Title of the wireframe
 
-**Can I opt out?**
+<p align="center">
+  <img src=""?raw=true alt=""></p>
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+<p align="right"><a href="#intro">Return to table of contents</a></p><p id="erd"></p>
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+# ERD Diagram
 
-**Anything more?**
+  - Title of ERD Diagram
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+<p align="center">
+  <img src=""?raw=true alt=""></p>
 
----
+<p align="right"><a href="#intro">Return to table of contents</a></p><p id="lf"></p>
 
-Happy coding!
+# Live Features
+
+  - Live Features
+
+<p align="center">
+  <img src=""?raw=true alt=""></p>
+
+
+<p align="right"><a href="#intro">Return to table of contents</a></p><p id="df"></p>
+
+# Desired Features
+
+  - Desired Features
+
+<p align="center">
+  <img src=""?raw=true alt=""></p>
+
+<p align="right"><a href="#intro">Return to table of contents</a></p><p id="tpy"></p>
+
+# Testing (Python)
+
+  - Unit-Testing-Python
+
+<p align="center">
+  <img src=""?raw=true alt=""></p>
+
+<p align="right"><a href="#intro">Return to table of contents</a></p><p id="tjs"></p>
+
+# Testing (JavaScript)
+
+  - Unit-Testing-JavaScript
+
+<p align="center">
+  <img src=""?raw=true alt=""></p>
+
+<p align="right"><a href="#intro">Return to table of contents</a></p><p id="dep"></p>
+
+# Deployment
+
+  - Early Deployment
+
+  - Final Deployment
+
+<p align="center">
+  <img src=""?raw=true alt=""></p>
+
+<p align="right"><a href="#intro">Return to table of contents</a></p><p id="b"></p>
+
+# Bugs (During Development)
+
+  - Bug One
+
+  - Bug Two
+
+<p align="center">
+  <img src=""?raw=true alt=""></p>
+
+<p align="right"><a href="#intro">Return to table of contents</a></p><p id="ub"></p>
+
+# Bugs (Unsolved)
+
+  - Bug One
+
+  - Bug Two
+
+<p align="center">
+  <img src=""?raw=true alt=""></p>
+
+<p align="right"><a href="#intro">Return to table of contents</a></p><p id="tu"></p>
+
+# Technologies Used
+
+  - Tech One
+
+  - Tech Two
+
+<p align="center">
+  <img src=""?raw=true alt=""></p>
+
+<p align="right"><a href="#intro">Return to table of contents</a></p><p id="tu"></p>
+
+# Credits
+
+  - Images
+
+  - Media
+
+  - Walkthrough Code
+  
+  - External Code
+
+<p align="center">
+  <img src=""?raw=true alt=""></p>
+
+
