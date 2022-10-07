@@ -65,31 +65,137 @@
 
 # User Stories
 
-- As an unregistered user I can relate to the appeal of this website so that I am encouraged to sign up.
+## As an unregistered user I can relate to the appeal of this website so that I am encouraged to sign up.
 
-- As an unregistered user I can sign up easily so that I can use the websites full features.
+  ### Acceptance Criteria
+  - Landing page content must appeal to the target audience.
 
-- As an unregistered user I can have the option to authenticate my email address as an option during sign in
+  - Title must communicate the sites goals clearly.
 
-- As an unregistered user I can have the option to authenticate myself using my google account as an option during sign in
+  - Imagery used must appeal to the target audience.
 
-- As a registered user I can login and logout of my account so that my account is unique to me and sessions are my own
+  ### Tasks
+  - Source images for landing page to appeal to a racing audience.
 
-- As a registered user I can access the capability of using the diary so that I can keep track of horses I like
+  - Create a title that will explain what the sites purpose is.
 
-- As a registered user I can be redirected to the 'create new diary entry page' so that I can make a rapid entry
+## As an unregistered user I can sign up easily so that I can use the websites full features.
 
-- As a registered user I can have access to a structured note entry functionality so that all of my notes are structured and organised
+  ### Acceptance Criteria
+  - Users must understand when on the landing page that the diary is for registered users only.
 
-- As a registered user I can see my notes presented to me organised and visually appealing so that I can re-read my notes comfortably
+  - Functionality to create an account must be present in more than one location.
+  
+  ### Tasks
+  - Explain the sites purpose clearly in the content description.
 
-- As a registered user I can perform full CRUD functionality on my notes so that I can I can control all of the entries
+  - Create sign up button in the nav-bar.
 
-- As a registered user I can search my notes so that they are easy to find when needed
+  - Build a 'create account' button under the landing page content area.
 
-- As a registered user I can comment, like, and share posts in the blog so that the website is more appealing
+## As an unregistered user I can have the option to authenticate my email address as an option during sign in
 
-- As a User I can access the blog so that read articles and chat to people in my community
+  ### Acceptance Criteria
+   - All-auth is implemented correctly.
+
+   - Users can login successfully with an email address.
+
+  ### Tasks
+   - Implement all-auth for user sign in.
+
+## As an unregistered user I can have the option to authenticate myself using my google account as an option during sign in
+
+  ### Acceptance Criteria
+  - Users can succesfully login with their google account credentials.
+
+  ### Tasks
+  - Implement sign in via google. 
+
+## As a registered user I can login and logout of my account so that my account is unique to me.
+
+  ### Acceptance Criteria
+  - Users are taken to the correct locations on the site when logged in an logged out.
+
+  ### Tasks
+  - Implement login and logout redirects for all-auth.
+
+  - Login will bring user to the create new entry page.
+
+  - Logout will bring the user to the landing page.
+
+## As a registered user I can access the capability of using the diary so that I can keep track of horses I like
+
+  ### Acceptance Criteria
+  - Registered users have full use of the site. Unregistered can only read the blog.
+
+  ### Tasks
+  - Give registered users only access to the create entry page using 'if is_authenticated'.
+
+## As a registered user I can be redirected to the 'create new diary entry page' so that I can make a rapid entry
+
+  ### Acceptance Criteria
+  - Users should have multiple options available to get back to the create new entry page from all locations within the site which make sense to have the option.
+
+  ### Tasks
+  - Build create new entry button into navbar on page for viewing entries.
+
+  - Build create new entry button into every entry in the diary alongside the edit entry button.
+
+## As a registered user I can have access to a structured note entry functionality so that all of my notes are structured and organised
+
+  ### Acceptance Criteria
+  - Users have all the fields necessary to take a detailed note on the result of a horse race.
+
+  ### Tasks
+  - Build all the fields on the 'Create Entry' data model based on the fields that would be typically given on a result/form so users can record relevant information.
+
+## As a registered user I can see my notes presented to me organised and visually appealing so that I can re-read my notes comfortably
+
+  ### Acceptance Criteria
+  - Build a seperate page where users can see the information they entered presented back to them clean, organised, easy to read.
+
+  ### Tasks
+  - Create a view entry page. All data to be organised logically and easy to read. 
+
+## As a registered user I can perform full CRUD functionality on my notes so that I can I can control all of the entries
+
+  ### Acceptance Criteria
+  - Users can Create, Read, Update and Delete notes from their diary.
+
+  ### Tasks
+  - Implement full CRUD functionality for users note entries.
+
+## As a registered user I can search my notes so that they are easy to find when needed
+
+  ### Acceptance Criteria
+  - Users can search their note entries.
+
+  ### Tasks
+  - Implement a search diary functionality.
+
+  - Users can be redirected to the same page but only view the searched entry.
+
+## As a registered user I can comment, like, and share posts in the blog so that the website is more appealing
+
+  ### Acceptance Criteria
+  - Users can can read, comment, like and share blog posts.
+
+  ### Tasks
+  - Populate the blog with some interesting articles.
+  
+  - Implement functionality to comment on the blog posts.
+
+  - Implement functionality to like the blog posts.
+
+  - Implement functionality to share the blog posts.
+
+## As a User I can access the blog so that read articles and chat to people in my community
+
+  ### Acceptance Criteria
+  - All users should be able to view the blog regardless of whether they have an account.
+
+  ### Tasks
+  - Allow all users to view the blog
 
 <p align="right"><a href="#intro">Return to table of contents</a></p><p id="de"></p>
 
