@@ -19,5 +19,5 @@ from diary import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.say_hello, name='test-httpresponse')
+    path('', views.get_landing_page, name='landing-page')
 ]
