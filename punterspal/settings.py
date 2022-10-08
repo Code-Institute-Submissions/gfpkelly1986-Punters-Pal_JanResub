@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+import mimetypes
+
 
 if os.path.isfile('env.py'):
     import env
@@ -32,6 +34,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['punters-pal.herokuapp.com', 'localhost']
+
+mimetypes.add_type("text/css", ".css", True)
 
 # Application definition
 
