@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+<div class="container-fluid">
+    <div class="row text-center">
+        <div class="col-12 mt-3"><h1>Create a New Entry to Your Diary</h1></div>
+    </div>
+    <div class="row">
+        <div class="col-8 offset-md-2">
+            <form action="" class="form-control">
+            {{ entry_form | crispy }}
+            {% csrf_token %}
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
