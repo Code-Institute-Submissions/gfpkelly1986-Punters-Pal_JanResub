@@ -1,5 +1,30 @@
 {% extends "base.html" %}
 
 {% block content %}
+<h1>Your racing diary entries</h1>
+{% for entry in entries %}
+<h3>{{ entry.race_title }}</h3>
+<p>{{ entry.grade }}</p>
+<p>{{ entry.distance }}</p>
+<p>{{ entry.going }}</p>
+<hr>
+<h2>{{ entry.horse_name }}</h2>
+<div class="row card">
+    <div class="col-8 mb-4 .card-body">
+        {{ entry.note_detail }}
+    </div>
+</div>
+<hr>
 
+<p>{{ entry.result_1 }}</p>
+<p>{{ entry.result_2 }}</p>
+<p>{{ entry.result_3 }}</p>
+<p>{{ entry.result_of_entry }}</p>
+<p>{{ entry.trainer }}</p>
+<p>{{ entry.jockey }}</p>
+<p>{{ entry.num_of_runners }}</p>
+
+<a href="#" class="button btn mt-4" style="background-color: #166475; color:white">Edit This Entry</a>
+<a href="#" class="button btn mt-4" style="background-color: #166475; color:white">Delete This Entry</a>
+{% endfor %}
 {% endblock %}

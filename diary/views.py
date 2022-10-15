@@ -35,10 +35,25 @@ class NoteDetail(View):
         if new_entry.is_valid():
             new_entry.save()
 
+        return render(request, 'diary_display.html')
+
+
+class ShowDiaryEntries(View):
+
+    def get(self, request, *args, **kwargs):
+        entries = DiaryEntry.objects.all()
+
         return render(
-                request,
-                'diary_display.html',
-                # {
-                #     'new_entry': NewEntryForm()
-                # },
-            )
+            request,
+            'diary_display.html',
+            {
+                'entries': entries
+            })
+
+
+# def get_todo_list(request):
+#     items = Item.objects.all()
+#     context = {
+#         'items': items
+#     }
+#     return render(request, 'todo/todo_list.html', context)
