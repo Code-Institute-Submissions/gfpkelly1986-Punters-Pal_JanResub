@@ -22,5 +22,5 @@ urlpatterns = [
     path('', views.get_landing_page, name='landing-page'),
     path('sign-up', views.get_sign_up_page, name='sign-up'),
     path('accounts/', include('allauth.urls')),
-    path('create_new_entry', views.PostDetail.as_view(), name='new-entry'),
+    path('create_new_entry', views.NoteDetail.as_view(), name='new-entry'),
 ]

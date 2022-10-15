@@ -17,7 +17,7 @@ def create_entry(request):
     return render(request, 'create_new_entry.html')
 
 
-class PostDetail(View):
+class NoteDetail(View):
 
     def get(self, request, *args, **kwargs):
         entry_form = NewEntryForm()
@@ -28,3 +28,17 @@ class PostDetail(View):
                 'entry_form': entry_form,
             }
         )
+
+    def post(self, request, *args, **kwargs):
+        new_entry = NewEntryForm(data=request.POST)
+
+        if new_entry.is_valid():
+            new_entry.save()
+
+        return render(
+                request,
+                'diary_display.html',
+                # {
+                #     'new_entry': NewEntryForm()
+                # },
+            )

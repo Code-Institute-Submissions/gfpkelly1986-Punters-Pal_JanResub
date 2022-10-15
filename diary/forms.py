@@ -8,6 +8,7 @@ class NewEntryForm(ModelForm):
         fields = [
             'race_title',
             'race_type',
+            'created_by',
             'horse_name',
             'grade',
             'distance',

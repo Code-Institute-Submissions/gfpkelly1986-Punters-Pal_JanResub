@@ -9,10 +9,17 @@
     </div>
     <div class="row">
         <div class="col-8 offset-md-2">
-            <form action="" class="form-control">
+            {% if user.is_authenticated %}
+            <form method ="POST" class="form-control">
             {{ entry_form | crispy }}
             {% csrf_token %}
+            <div class="row text-center" >
+                <div class="col-12">
+                    <button type="submit" class = "btn mt-4" style="background-color: #166475; color:white">Send to Diary</button>
+                </div>
+            </div>
             </form>
+            {% endif %}
         </div>
     </div>
 </div>
