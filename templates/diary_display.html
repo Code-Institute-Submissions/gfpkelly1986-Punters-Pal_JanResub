@@ -25,6 +25,6 @@
 <p>{{ entry.num_of_runners }}</p>
 
 <a href="edit_entry/{{ entry.id }}" class="button btn mt-4" style="background-color: #166475; color:white">Edit This Entry</a>
-<a href="#" class="button btn mt-4" style="background-color: #166475; color:white">Delete This Entry</a>
+<a href="delete_entry/{{ entry.id }}" class="button btn mt-4" style="background-color: #166475; color:white">Delete This Entry</a>
 {% endfor %}
 {% endblock %}

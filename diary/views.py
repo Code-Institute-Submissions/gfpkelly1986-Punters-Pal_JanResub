@@ -18,6 +18,13 @@ def create_entry(request):
     return render(request, 'create_new_entry.html')
 
 
+def delete_entry(request, entry_id):
+    entries = DiaryEntry.objects.all()
+    entry = get_object_or_404(entries, id=entry_id)
+    entry.delete()
+    return redirect('all-entries')
+
+
 class ShowDiaryEntries(View):
 
     def get(self, request, *args, **kwargs):
