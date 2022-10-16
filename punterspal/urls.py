@@ -23,5 +23,6 @@ urlpatterns = [
     path('sign-up', views.get_sign_up_page, name='sign-up'),
     path('accounts/', include('allauth.urls')),
     path('create_new_entry', views.NoteDetail.as_view(), name='new-entry'),
-    path('diary_display.html', views.ShowDiaryEntries.as_view(), name='all-entries')
+    path('diary_display.html', views.ShowDiaryEntries.as_view(), name='all-entries'),
+    path('edit_entry/<entry_id>', views.EditDiaryEntry.as_view(), name='edit-entry'),
 ]

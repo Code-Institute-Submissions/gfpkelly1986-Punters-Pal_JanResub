@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import DiaryEntry
 from diary.forms import NewEntryForm
 from django.views import View
@@ -31,6 +31,30 @@ class ShowDiaryEntries(View):
             })
 
 
+class EditDiaryEntry(View):
+
+    def get(self, request, entry_id, *args, **kwargs):
+        entries = DiaryEntry.objects.all()
+        entry = get_object_or_404(entries, id=entry_id)
+        edit_form = NewEntryForm(instance=entry)
+        return render(
+            request,
+            'edit_entry.html',
+            {
+                'edit_form': edit_form
+            }
+        )
+
+    def post(self, request, entry_id, *args, **kwargs):
+        entries = DiaryEntry.objects.all()
+        entry = get_object_or_404(entries, id=entry_id)
+        update_form = NewEntryForm(data=request.POST, instance=entry)
+        if update_form.is_valid():
+            update_form.save()
+
+        return redirect('all-entries')
+
+
 class NoteDetail(View):
 
     def get(self, request, *args, **kwargs):
@@ -51,11 +75,3 @@ class NoteDetail(View):
             instance.save()
 
         return redirect('diary_display.html')
-
-
-# def get_todo_list(request):
-#     items = Item.objects.all()
-#     context = {
-#         'items': items
-#     }
-#     return render(request, 'todo/todo_list.html', context)
