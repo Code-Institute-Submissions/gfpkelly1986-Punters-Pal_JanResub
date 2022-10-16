@@ -337,7 +337,18 @@
   - Media
 
   - Walkthrough Code
-  
+
+  - Tutor Support
+
+    - Help from Sean in Tutor support with the following code on the 16-10-2022:
+            <p>
+              instance = new_entry.save(commit=False)<br>
+              instance.created_by = User.objects.get(username=request.user.username)<br>
+              instance.save()
+            </p>
+
+    - The code above helped to solve a technical issue whereby I was rendering a form for the user to enter data and I did not want the created_by field to be seen by the user but it was a ForeignKey field and threw a violates not null exception when left blank. This code helped me to create an instance of the new_entry and set its ForeignKey to the users username before committing it to the database thus resolving the error.
+
   - External Code
 
 <p align="center">
