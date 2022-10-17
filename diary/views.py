@@ -10,8 +10,8 @@ def get_landing_page(request):
     return render(request, 'index.html')
 
 
-def get_sign_up_page(request):
-    return render(request, 'sign-up.html')
+# def get_sign_up_page(request):
+#     return render(request, 'sign-up.html')
 
 
 def create_entry(request):
