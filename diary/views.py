@@ -10,11 +10,7 @@ def get_landing_page(request):
     return render(request, 'index.html')
 
 
-# def get_sign_up_page(request):
-#     return render(request, 'sign-up.html')
-
-
-def create_entry(request):
+def get_create_entry_page(request):
     return render(request, 'create_new_entry.html')
 
 
@@ -28,13 +24,12 @@ def delete_entry(request, entry_id):
 class ShowDiaryEntries(View):
 
     def get(self, request, *args, **kwargs):
-        entries = DiaryEntry.objects.all()
-
+        entries = DiaryEntry.objects.filter(created_by=request.user)
         return render(
             request,
             'diary_display.html',
             {
-                'entries': entries
+                'entries': entries,
             })
 
 
