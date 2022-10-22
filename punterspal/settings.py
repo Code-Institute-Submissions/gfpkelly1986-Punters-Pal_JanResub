@@ -67,16 +67,6 @@ MIDDLEWARE = [
 
 SITE_ID = 1
 
-# SOCIALACCOUNT_PROVIDERS = {
-#     'google': {
-#         'APP': {
-#             'client_id': '192717972311-c0bhnfimtj9vioo8ibmp9voc9vomei5n.apps.googleusercontent.com',
-#             'secret': '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',
-#             'key': ''
-#         }
-#     }
-# }
-
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
         'SCOPE': [
@@ -113,7 +103,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'punterspal.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
@@ -188,7 +177,4 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# AUTHENTICATION_BACKENDS = [
-#     'django.contrib.auth.backends.ModelBackend',
-#     'allauth.account.auth_backends.AuthenticationBackend'
-# ]
+

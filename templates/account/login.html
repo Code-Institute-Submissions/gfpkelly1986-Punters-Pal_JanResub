@@ -2,6 +2,7 @@
 
 {% load i18n %}
 {% load account socialaccount %}
+{% load socialaccount %}
 
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
@@ -45,6 +46,8 @@
         {% endif %}
         <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
         <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
+
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
       </form>
 
     </div>
