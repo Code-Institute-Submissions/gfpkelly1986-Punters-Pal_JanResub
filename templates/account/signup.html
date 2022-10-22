@@ -28,6 +28,8 @@
             <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
             {% endif %}
             <button type="submit">{% trans "Sign Up" %} &raquo;</button>
+
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
           </form>
         </div>
       </div>
