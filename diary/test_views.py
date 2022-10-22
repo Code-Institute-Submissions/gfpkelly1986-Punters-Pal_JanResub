@@ -101,4 +101,3 @@ class TestDiaryViews(TestCase):
             trainer='test',
             )
         response = self.client.get(f'/delete/{entry.id}')
-
