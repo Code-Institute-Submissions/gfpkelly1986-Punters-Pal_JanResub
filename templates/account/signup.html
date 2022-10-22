@@ -10,7 +10,8 @@
     <div class="container-fluid py-5">
       <h1 class="display-5 fw-bold">Create an Account to Get Started</h1>
       <p class="col-md-8 fs-5">
-        Sign up below to access your own personal diary. Our diary is pre-structured to allow you to record in depth notes rapidly!
+        Sign up below to access your own personal diary. Our diary is pre-structured to allow you to record in depth
+        notes rapidly!
         {% blocktrans %}
         Already have an account? Then login <a href="{{ login_url }}">here</a>.
         {% endblocktrans %}
@@ -33,6 +34,9 @@
     </div>
   </div>
 </div>
+
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<script src="https://apis.google.com/js/platform.js?" async defer></script>
 <script>
   document.getElementById("myIMG2").style.maxHeight = "250px";
 </script>

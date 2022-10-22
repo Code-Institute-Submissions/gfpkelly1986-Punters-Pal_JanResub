@@ -3,6 +3,10 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
+{% if user.is_authenticated %}
+  <h3>Welcome, You are logged in as {{ user.username }}</3>
+{% endif%}
+
 <div class="container-fluid">
     <div class="row text-center">
         <div class="col-12 mt-3"><h1>Create a New Entry to Your Diary</h1></div>
