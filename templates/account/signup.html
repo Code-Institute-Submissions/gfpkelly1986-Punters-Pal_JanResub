@@ -1,41 +1,53 @@
 {% extends "base.html" %}
 
 {% load i18n %}
-
+{% load crispy_forms_tags %}
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block content %}
 <div class="container">
   <div class="p-4 mb-3 bg-light rounded-3">
-    <div class="container-fluid py-5">
+    <div class="container-fluid py-5 text-center">
       <h1 class="display-5 fw-bold">Create an Account to Get Started</h1>
-      <p class="col-md-8 fs-5">
-        Sign up below to access your own personal diary. Our diary is pre-structured to allow you to record in depth
-        notes rapidly!
+      <p class="col-12 fs-5">
+        Sign up below to set up your own personal diary!<br>Our diary is pre-structured to allow you to record in depth
+        notes rapidly!<br>
         {% blocktrans %}
         Already have an account? Then login <a href="{{ login_url }}">here</a>.
         {% endblocktrans %}
       </p>
       <div class="row text-center">
-        <img id="myIMG2"
+        <img class="m-auto" id="myIMG2"
           src="https://res.cloudinary.com/dqk6bfwfk/image/upload/v1665316657/static/images/racing-images/horse-jump-racing-header_ibe7xo.jpg"
           alt="image of horses racing as seen from behind">
-        <div class="col-12 mt-4">
+        <div class="col-6 mt-4 ">
           <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
             {% csrf_token %}
-            {{ form.as_p }}
+            {{ form | crispy }}
             {% if redirect_field_value %}
             <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
             {% endif %}
-            <button type="submit">{% trans "Sign Up" %} &raquo;</button>
+            <button type="submit">{% trans "Sign Up Without Google" %} &raquo;</button>
           </form>
         </div>
-      </div>
-      <div class="row text text-center" >
-        <div class="col-12 offset-5 mt-4">
-          <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <div class="col-4">
+          <h3 class="mt-5 text-white">Create an account with Google</h3>
+          <div id="g_id_onload"
+            data-client_id="479612238169-k979d650mm7oa5fr12n84m26fmtihocq.apps.googleusercontent.com"
+            data-context="signup" data-ux_mode="redirect" data-login_uri="/create_new_entry" data-nonce=""
+            data-auto_select="true" data-itp_support="true">
+          </div>
+
+          <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="filled_black"
+            data-text="signup_with" data-size="large" data-logo_alignment="left">
+          </div>
         </div>
       </div>
+      <!-- <div class="row text text-center" >
+        <div class="col-12 offset-5 mt-4">
+          
+        </div>
+      </div> -->
     </div>
   </div>
 </div>
@@ -44,6 +56,7 @@
 <script src="https://apis.google.com/js/platform.js?" async defer></script>
 <script>
   document.getElementById("myIMG2").style.maxHeight = "250px";
+  document.getElementById("myIMG2").style.maxWidth = "80%";
 </script>
 {% endblock %}
 
