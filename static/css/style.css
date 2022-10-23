@@ -116,6 +116,15 @@ button, input, optgroup, select, textarea {
     color: #cdb06f;
 }
 
+label{
+    margin-left: 20%;
+    font-family: Nunito, sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.3rem;
+    line-height: 0.3rem;
+    font-style: oblique;
+}
+
 /*-----Deals with overflow into footer----*/
 
 .spacing {
