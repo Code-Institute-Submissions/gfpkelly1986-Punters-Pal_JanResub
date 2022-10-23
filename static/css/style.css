@@ -4,18 +4,6 @@ body {
     background-color: #ebe9e2;
 }
 
-#main-logo {
-font-family: Raleway, sans-serif;
-font-size: 1.5rem;
-text-decoration: none;
-color: white;
-padding-left: 150px;
-}
-
-#main-logo:hover {
-    font-size: 1.6rem;
-}
-
 #landing-header {
     margin-top: 40px;
     margin-bottom: 40px;
@@ -34,26 +22,62 @@ a.button {
 
 
 /* ---- Override some Bootstrap link styles ----*/
-.nav-link {
+.navbar-light {
+    color:#cdb06f;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color:#cdb06f;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
     color: white;
 }
 
-.nav-item {
-    padding-left: 150px;
+.bg-light {
+    background-color:#cdb06f!important;
+}
+.navbar>.container {
+    align-items: flex-end;
+}
+
+.nav-link {
+    padding: 0 30px 15px 0;
+}
+
+.form-control {
+    width: 60%;
+    border-radius: .15rem;
+}
+
+.btn-outline-success {
+    color: white;
+    border-color: #cdb06f;
+}
+
+.btn-outline-success:hover {
+    color:black;
+    background-color:#cdb06f;
+    border-color:black;
+}
+
+.btn-outline-success:active {
+    color:black;
+    background-color:#cdb06f;
+    border-color:black;
+}
+
+.btn-outline-success:focus {
+    box-shadow: 0 0 0 0.25rem rgb(205,176,111);
+}
+
+.btn:focus {
+    box-shadow: 0 0 0 0.25rem rgba(255,255,255,0.7);
 }
 
 .nav-link:hover {
     color: white;
-    font-size: 1.1rem;
-}
-
-.navbar-brand {
-    color: white;
-}
-
-.navbar-brand a:hover {
-    color: white;
-    font-size: 1.1rem;
+    font-size: 1.01rem;
 }
 
 .paragraphtext {
@@ -76,7 +100,7 @@ a.button {
 
 /* ----Footer styles ----*/
 
-footer {
-    height: 11vh;
-    
+.footer-style {
+    color: #cdb06f;
+    font-size: 1.4rem;
 }
