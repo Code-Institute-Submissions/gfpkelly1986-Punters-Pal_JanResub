@@ -125,6 +125,50 @@ label{
     font-style: oblique;
 }
 
+/*---- Hover styles for diary display buttons ----*/
+
+.diary-button-pos {
+    background-color: #166475;
+    color:white;
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    padding: 0.375rem 0.75rem;
+    font-size: 1.1rem;
+    border-radius: 0.25rem;
+}
+
+.diary-button-pos:hover {
+    color: #cdb06f;
+}
+
+.diary-button-neg {
+    background-color: #eb391a;
+    color:white;
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    padding: 0.375rem 0.75rem;
+    font-size: 1.1rem;
+    border-radius: 0.25rem;
+}
+
+.diary-button-neg:hover {
+    color:black;
+}
+
+
+
 /*-----Deals with overflow into footer----*/
 
 .spacing {
