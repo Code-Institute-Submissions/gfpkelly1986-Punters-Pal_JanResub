@@ -125,6 +125,10 @@ label{
     font-style: oblique;
 }
 
+.short-text { 
+    display: none; 
+}
+
 /*---- Hover styles for diary display buttons ----*/
 
 .diary-button-pos {
@@ -257,11 +261,16 @@ label{
         background-color: #ebe9e229;
     }
     .header-mobile {
-        content: 'Create a New Entry';
         margin-right: 70px;
     }
     .welcome-mobile {
         margin-right: 50px;
+    }
+    .short-text {
+        display: inline-block;
+    }
+    .full-text {
+        display: none;
     }
 }
 
@@ -277,5 +286,9 @@ label{
     .navbar>.container {
         display: block;
         float: right;
+    }
+
+    .row>* {
+        padding-left: 35px;
     }
 }
