@@ -241,3 +241,36 @@ label{
     color: #cdb06f;
     font-size: 1.4rem;
 }
+
+@media screen and (max-width: 576px){
+    .row>* {
+        flex-shrink: unset;
+        padding-right: none;
+    }
+
+    .form-control {
+        width: 90%;
+        padding: 0;
+    }
+    .body {
+        background-image: none;
+        background-color: #ebe9e229;
+    }
+    .header-mobile {
+        content: "Create a New Entry.";
+        margin-right: 70px;
+    }
+    .welcome-mobile {
+        margin-right: 50px;
+    }
+}
+
+@media screen and (max-width: 425px){
+    .navbarbrand {
+        padding: 0;
+    }
+    .logo-mobile-float-r {
+        float:right;
+        display:block;
+    }
+}
