@@ -2,7 +2,7 @@
 
 body {
     background-color: #ebe9e2;
-    background-image: url("https://res.cloudinary.com/dqk6bfwfk/image/upload/v1666524101/static/images/racing-images/pexels-bence-szemerey-6750050_lrobn7.jpg");
+    /* background-image: url("https://res.cloudinary.com/dqk6bfwfk/image/upload/v1666524101/static/images/racing-images/pexels-bence-szemerey-6750050_lrobn7.jpg"); */
     background-size: cover;
 }
 
@@ -253,11 +253,11 @@ label{
         padding: 0;
     }
     .body {
-        background-image: none;
+        background-image:url();
         background-color: #ebe9e229;
     }
     .header-mobile {
-        content: "Create a New Entry.";
+        content: 'Create a New Entry';
         margin-right: 70px;
     }
     .welcome-mobile {
@@ -272,5 +272,10 @@ label{
     .logo-mobile-float-r {
         float:right;
         display:block;
+    }
+
+    .navbar>.container {
+        display: block;
+        float: right;
     }
 }
