@@ -26,4 +26,6 @@ urlpatterns = [
     path('diary_display.html', views.ShowDiaryEntries.as_view(), name='all-entries'),
     path('edit_entry/<entry_id>', views.EditDiaryEntry.as_view(), name='edit-entry'),
     path('delete_entry/<entry_id>', views.delete_entry, name='delete-entry'),
+    path('search_results.html', views.SearchResults.as_view(), name='search-results'),
+
 ]

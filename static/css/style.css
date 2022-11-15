@@ -4,6 +4,7 @@ body {
     background-color: #ebe9e2;
     /* background-image: url("https://res.cloudinary.com/dqk6bfwfk/image/upload/v1666524101/static/images/racing-images/pexels-bence-szemerey-6750050_lrobn7.jpg"); */
     background-size: cover;
+    line-height: 1.0;
 }
 
 .landing-header {

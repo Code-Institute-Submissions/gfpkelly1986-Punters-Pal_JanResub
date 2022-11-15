@@ -33,6 +33,14 @@ class ShowDiaryEntries(View):
             })
 
 
+class SearchResults(View):
+
+    def post(self, request, *args, **kwargs):
+        return render(
+            request,
+            'search_results.html')
+
+
 class EditDiaryEntry(View):
 
     def get(self, request, entry_id, *args, **kwargs):
