@@ -11,7 +11,8 @@
 {% for entry in entries %}
 <div class="container bg-light">
     <div class="row">
-        <div class="col-8 mt-3 ms-auto me-auto">
+        <div class="col"></div>
+        <div class="col-sm-10 col-md-8 col-lg-8 mt-3 ms-auto me-auto">
             <h3><ins>Race Title:</ins> <span class="text-white">&nbsp&nbsp&nbsp{{ entry.race_title }}</span></h3>
             <p class="paragraphtext mt-3"><strong>Grade of the race:</strong>&nbsp&nbsp&nbsp<span
                     class="text-white">{{ entry.grade }}</span></p>
@@ -21,8 +22,8 @@
                     class="text-white">{{ entry.going }}</span></p>
             <hr>
             <h2><strong>Entry Name:</strong>&nbsp&nbsp&nbsp<span class="text-white">{{ entry.horse_name }}</span></h2>
-            <div class="row card">
-                <div class="col-8 mb-4 .card-body paragraphtext">
+            <div class="row card text-center">
+                <div class="col mb-4 mt-4 .card-body paragraphtext ">
                     {{ entry.note_detail }}
                 </div>
             </div>
@@ -46,6 +47,7 @@
             <a href="edit_entry/{{ entry.id }}" class="mt-4 mb-3 me-5 diary-button-pos">Edit This Entry</a>
             <a href="delete_entry/{{ entry.id }}" class="mt-4 mb-3 ms-5 diary-button-neg">Delete This Entry</a>
         </div>
+        <div class="col"></div>
     </div>
     <hr>
 </div>

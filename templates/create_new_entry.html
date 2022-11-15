@@ -11,12 +11,13 @@
 {% endif%}
 
 
-<div class="container-fluid">
+<div class="container">
     <div class="row text-center">
-        <div class="col-12 mt-3 header-mobile"><h1 class="full-text">Create a New Entry to Your Diary<span class="short-text">Create an Entry</span></h1></div>
+        <div class="col-12 mt-3 header-mobile"><h2 class="full-text">Create a New Entry to Your Diary<span class="short-text">Create an Entry</span></h2></div>
     </div>
     <div class="row">
-        <div class="col-sm-12">
+        <div class="col"></div>
+        <div class="col-lg-8">
             {% if user.is_authenticated %}
             <form method ="POST" class="form-control rounded-3">
             {{ entry_form | crispy }}
@@ -29,6 +30,7 @@
             </form>
             {% endif %}
         </div>
+        <div class="col"></div>
     </div>
 </div>
 

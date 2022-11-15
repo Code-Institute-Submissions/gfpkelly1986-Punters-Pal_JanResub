@@ -48,7 +48,7 @@ a.button {
     background-color:#cdb06f!important;
 }
 .navbar>.container {
-    align-items: flex-end;
+    align-items: center;
 }
 
 .nav-link {
@@ -56,7 +56,7 @@ a.button {
 }
 
 .form-control {
-    width: 60%;
+    width: 100%;
     border-radius: .15rem;
 }
 
@@ -133,8 +133,9 @@ label{
 
 .diary-button-pos {
     background-color: #166475;
+    float:left;
     color:white;
-    display: inline-block;
+    /* display: inline-block; */
     font-weight: 400;
     line-height: 1.5;
     text-align: center;
@@ -246,7 +247,28 @@ label{
     font-size: 1.4rem;
 }
 
+
+/* .row>* {
+    padding-left: 0;
+    padding-right: 0;
+} */
+
+.card {
+    border-radius: 0px;
+}
+
 @media screen and (max-width: 576px){
+    .hide-text{
+        display: none;
+    }
+
+    label {
+        letter-spacing: normal;
+        line-height: normal;
+    }
+}
+
+/* @media screen and (max-width: 576px){
     .row>* {
         flex-shrink: unset;
         padding-right: none;
@@ -289,6 +311,16 @@ label{
     }
 
     .row>* {
-        padding-left: 35px;
+        padding-left: 15px;
+        padding-right: 0;
     }
-}
+
+    img, svg {
+        position: relative;
+        left: 120px;
+    }
+
+    *, ::after, ::before {
+        box-sizing: unset;
+    }
+} */
