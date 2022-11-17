@@ -57,8 +57,9 @@
             <!-- <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> -->
           </li>
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <form class="d-flex" method ="POST" action="{% url 'search-results' %}">
+          {% csrf_token %}
+          <input class="form-control me-2" type="search" placeholder="Search by Horse Name" name="diary-search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
         {% endif %}
@@ -72,12 +73,7 @@
     
     {% endblock content %}
   </main>
-  <!-- <section>
-    <div id="spacing">
-      
-    </div>
-  </section>
-   -->
+
   <!-- Footer -->
   <footer class="footer mt-5 py-3 page-footer bg-dark">
     <p class="m-0 text-center footer-style">Punters-Pal</p>

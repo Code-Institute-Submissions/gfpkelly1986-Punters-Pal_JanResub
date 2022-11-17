@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.conf import settings
 from .models import DiaryEntry
 from diary.forms import NewEntryForm
 from django.views import View
@@ -21,6 +22,10 @@ def delete_entry(request, entry_id):
     return redirect('all-entries')
 
 
+def error_404_view(request, exception):
+    return render(request, '404.html')
+
+
 class ShowDiaryEntries(View):
 
     def get(self, request, *args, **kwargs):
@@ -36,9 +41,18 @@ class ShowDiaryEntries(View):
 class SearchResults(View):
 
     def post(self, request, *args, **kwargs):
+        entries = DiaryEntry.objects.all()
+        search_entry = request.POST['diary-search']
+        entry = get_object_or_404(entries, horse_name=search_entry)
+
         return render(
             request,
-            'search_results.html')
+            'search_results.html',
+            {
+                'search_entry': search_entry,
+                'entry': entry
+            }
+        )
 
 
 class EditDiaryEntry(View):
