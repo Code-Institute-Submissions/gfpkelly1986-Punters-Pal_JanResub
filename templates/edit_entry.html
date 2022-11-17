@@ -2,24 +2,29 @@
 
 {% block content %}
 {% load crispy_forms_tags %}
-<div class="container-fluid">
+<div class="container">
     <div class="row text-center">
-        <div class="col-12 mt-3"><h1>Edit This Diary Entry</h1></div>
+        <div class="col-12 mt-3 header-mobile">
+            <h1>Edit This Diary Entry</h1>
+        </div>
     </div>
     <div class="row">
-        <div class="col-10 offset-md-3">
+        <div class="col"></div>
+        <div class="col-lg-8">
             {% if user.is_authenticated %}
-            <form method ="POST" class="form-control rounded-3">
-            {{ edit_form | crispy }}
-            {% csrf_token %}
-            <div class="row text-center" >
-                <div class="col-12">
-                    <button type="submit" class = "btn mt-4" style="background-color: #166475; color:white">Send to Diary</button>
+            <form method="POST" class="form-control rounded-3">
+                {{ edit_form | crispy }}
+                {% csrf_token %}
+                <div class="row text-center">
+                    <div class="col-12">
+                        <button type="submit" class="btn mt-4" style="background-color: #166475; color:white">Send to
+                            Diary</button>
+                    </div>
                 </div>
-            </div>
             </form>
             {% endif %}
         </div>
+        <div class="col"></div>
     </div>
 </div>
 {% endblock %}
