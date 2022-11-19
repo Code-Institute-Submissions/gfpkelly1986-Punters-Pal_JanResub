@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.conf import settings
 from .models import DiaryEntry
 from diary.forms import NewEntryForm
-from django.views import View
+from django.views import generic, View
 from django.contrib.auth.models import User
 
 
@@ -30,6 +30,7 @@ class ShowDiaryEntries(View):
 
     def get(self, request, *args, **kwargs):
         entries = DiaryEntry.objects.filter(created_by=request.user)
+        paginate_by = 3
         return render(
             request,
             'diary_display.html',
@@ -95,7 +96,8 @@ class NoteDetail(View):
         new_entry = NewEntryForm(data=request.POST)
         if new_entry.is_valid():
             instance = new_entry.save(commit=False)
-            instance.created_by = User.objects.get(username=request.user.username)
+            instance.created_by = User.objects.get(
+                username=request.user.username)
             instance.save()
 
         return redirect('diary_display.html')
