@@ -2,6 +2,72 @@
 
 {% block content %}
 <div class="container">
+        <div class="row text-center">
+            <div class="col-12 ">
+                <h1 class="mt-3 mb-3 display-4">Your Racing Diary Entries</h1>
+            </div>
+        </div>
+    </div>
+    {% for entry in entries %}
+    <div class="container col-lg-8" id="grad"  style="border-radius: 30px;">
+        <div class="row">
+            <!-- <div class="col"></div> -->
+            <div class="col-sm-10 col-md-6 col-lg-8 mt-3 ms-auto me-auto">
+                <h3><ins>Race Title:</ins> <span class="">&nbsp&nbsp&nbsp{{ entry.race_title }}</span></h3>
+                <p class="paragraphtext mt-3"><strong>Grade of the race:</strong>&nbsp&nbsp&nbsp<span
+                        class="">{{ entry.grade }}</span></p>
+                <p class="paragraphtext"><strong>Distance the race was run at:</strong>&nbsp&nbsp&nbsp<span
+                        class="">{{ entry.distance }}</span></p>
+                <p class="paragraphtext"><strong>The condition of the ground:</strong>&nbsp&nbsp&nbsp<span
+                        class="">{{ entry.going }}</span></p>
+                <hr>
+                <h2><strong>Entry Name:</strong>&nbsp&nbsp&nbsp<em>{{ entry.horse_name }}</em></h2>
+                <div class="row card text-center">
+                    <div class="col mb-4 mt-4 .card-body paragraphtext ">
+                        {{ entry.note_detail | linebreaks }}
+                    </div>
+                </div>
+                <hr>
+    
+                <p class="paragraphtext"><strong><ins>Winner of the race:</ins></strong>&nbsp&nbsp&nbsp<span
+                        ><mark>{{ entry.result_1 }}</mark></span></p>
+                <p class="paragraphtext"><strong>2nd place finish:</strong>&nbsp&nbsp&nbsp<span
+                        >{{ entry.result_2 }}</span></p>
+                <p class="paragraphtext"><strong>3rd place finish:</strong>&nbsp&nbsp&nbsp<span
+                        >{{ entry.result_3 }}</span></p>
+                <p class="paragraphtext"><strong>Finish position of noted entry:</strong>&nbsp&nbsp&nbsp<span
+                        >{{ entry.result_of_entry }}</span></p>
+                <p class="paragraphtext"><strong>Trainer of noted entry:</strong>&nbsp&nbsp&nbsp<span
+                        >{{ entry.trainer }}</span></p>
+                <p class="paragraphtext"><strong>Jockey that rode on the day:</strong>&nbsp&nbsp&nbsp<span
+                        >{{ entry.jockey }}</span></p>
+                <p class="paragraphtext"><strong>The number of runners that ran in the race:</strong>&nbsp&nbsp&nbsp<span
+                        >{{ entry.num_of_runners }}</span></p>
+    
+                <a href="edit_entry/{{ entry.id }}" class="mt-4 mb-3 me-5 diary-button-pos">Edit This Entry</a>
+                <a href="delete_entry/{{ entry.id }}" class="mt-4 mb-3 ms-5 diary-button-neg">Delete This Entry</a>
+            </div>
+            <!-- <div class="col"></div> -->
+        </div>
+    </div>
+    <div style="height: 20px;"></div>
+    {% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container">
     <div class="row text-center">
         <div class="col-12 ">
             <h1 class="mt-3 mb-3">Your Racing Diary Entries</h1>
@@ -51,5 +117,5 @@
     </div>
     <hr>
 </div>
-{% endfor %}
+{% endfor %} -->
 {% endblock %}

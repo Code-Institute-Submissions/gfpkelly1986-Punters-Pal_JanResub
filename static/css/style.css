@@ -3,7 +3,9 @@
 body {
     background-color: #ebe9e2;
     /* background-image: url("https://res.cloudinary.com/dqk6bfwfk/image/upload/v1666524101/static/images/racing-images/pexels-bence-szemerey-6750050_lrobn7.jpg"); */
-    background-size: cover;
+    background-image: url("https://res.cloudinary.com/dqk6bfwfk/image/upload/v1668878732/static/images/background-images/pexels-gradienta-7130538_cm4iqo.jpg");
+    /* background-repeat: no-repeat; */
+    background-size: auto;
     line-height: 1.0;
 }
 
@@ -11,6 +13,7 @@ body {
     margin-top: 40px;
     margin-bottom: 40px;
     text-align: center;
+    font-weight: 400;
 }
 
 /* .card-image{
@@ -98,8 +101,9 @@ a.button {
 
 .paragraphtext {
     font-family: Raleway, sans-serif;
-    font-size: 1.3rem;
+    font-size: 1.0rem;
     color: rgb(5, 5, 5);
+    line-height: 28px;
 }
 
 .text-align {
@@ -275,6 +279,21 @@ a {
     height: 175px;
 }
 
+#grad {
+    background-image: linear-gradient(to right, rgb(195 188 184) , rgb(219, 214, 210));
+  }
+
+#grad2 {
+background-image: linear-gradient(rgb(29, 26, 26), rgb(48, 18, 18));
+}
+
+.heading-style {
+    font-weight: 400;
+}
+
+.welcome{
+    font-weight: 200;
+}
 
 /* ----Footer styles ----*/
 
