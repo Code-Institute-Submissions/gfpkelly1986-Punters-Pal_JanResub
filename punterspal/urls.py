@@ -15,18 +15,22 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from diary import views
+from diary import views as diary_views
+from blog import views as blog_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.get_landing_page, name='landing-page'),
+    path('', diary_views.get_landing_page, name='landing-page'),
     # path('sign-up', views.get_sign_up_page, name='sign-up'),
     path('accounts/', include('allauth.urls')),
-    path('create_new_entry', views.NoteDetail.as_view(), name='new-entry'),
-    path('diary_display.html', views.ShowDiaryEntries.as_view(), name='all-entries'),
-    path('edit_entry/<entry_id>', views.EditDiaryEntry.as_view(), name='edit-entry'),
-    path('delete_entry/<entry_id>', views.delete_entry, name='delete-entry'),
-    path('search_results.html', views.SearchResults.as_view(), name='search-results'),
+    path('create_new_entry', diary_views.NoteDetail.as_view(), name='new-entry'),
+    path('diary_display.html', diary_views.ShowDiaryEntries.as_view(), name='all-entries'),
+    path('edit_entry/<entry_id>', diary_views.EditDiaryEntry.as_view(), name='edit-entry'),
+    path('delete_entry/<entry_id>', diary_views.delete_entry, name='delete-entry'),
+    path('search_results.html', diary_views.SearchResults.as_view(), name='search-results'),
+    path('blog', blog_views.PostList.as_view(), name='blog'),
+    path('<slug:slug>/', blog_views.PostDetail.as_view(), name='post_detail'),
+    path('like/<slug:slug>', blog_views.PostLike.as_view(), name='post_like'),
 ]
 
 handler404 = "diary.views.error_404_view"
