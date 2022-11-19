@@ -14,6 +14,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.contrib.staticfiles.storage import staticfiles_storage
+from django.views.generic.base import RedirectView
 from django.urls import path, include
 from diary import views as diary_views
 from blog import views as blog_views
@@ -31,6 +33,8 @@ urlpatterns = [
     path('blog', blog_views.PostList.as_view(), name='blog'),
     path('<slug:slug>/', blog_views.PostDetail.as_view(), name='post_detail'),
     path('like/<slug:slug>', blog_views.PostLike.as_view(), name='post_like'),
+    path("favicon.ico", RedirectView.as_view(url=staticfiles_storage.url(
+        "favicon.ico")),),
 ]
 
 handler404 = "diary.views.error_404_view"
