@@ -4,35 +4,39 @@
 {% load crispy_forms_tags %}
 
 {% if user.is_authenticated %}
-  
-    <div class="row text-center">
-        <div class="col-12 mt-3"><h3 class="welcome">Welcome {{ user.username }}!</h3></div>
-    </div>
-{% endif%}
 
+<div class="row text-center">
+    <div class="col-12 mt-3">
+        <h3 class="welcome">Welcome {{ user.username }}!</h3>
+    </div>
+</div>
+{% endif%}
 
 <div class="container">
     <div class="row text-center">
-        <div class="col-12 mt-3 header-mobile"><h4 class="full-text heading-style">Create a New Entry to Your Diary<span class="short-text">Create an Entry</span></h4></div>
+        <div class="col-12 mt-3">
+            <h4 class="full-text heading-style">Create a New Entry to Your Diary<span class="short-text">Create an
+                    Entry</span></h4>
+        </div>
     </div>
     <div class="row">
         <div class="col"></div>
         <div class="col-lg-8">
             {% if user.is_authenticated %}
-            <form method ="POST" class="form-control rounded-3">
-            {{ entry_form | crispy }}
-            {% csrf_token %}
-            <div class="row text-center" >
-                <div class="col-12">
-                    <button type="submit" class = "btn mt-4" style="background-color: #166475; color:white">Send to Diary</button>
+            <form method="POST" class="form-control rounded-3">
+                {{ entry_form | crispy }}
+                {% csrf_token %}
+                <div class="row text-center">
+                    <div class="col-12">
+                        <button type="submit" class="btn mt-4" style="background-color: #166475; color:white">Send to
+                            Diary</button>
+                    </div>
                 </div>
-            </div>
             </form>
             {% endif %}
         </div>
         <div class="col"></div>
     </div>
 </div>
-
 
 {% endblock %}
