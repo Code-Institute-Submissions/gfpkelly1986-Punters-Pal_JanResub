@@ -313,4 +313,12 @@ background-image: linear-gradient(rgb(29, 26, 26), rgb(48, 18, 18));
     .row {
         --bs-gutter-x: 0;
     }
+
+    .navbar-light .navbar-brand {
+        width: 70vw;
+    }
+
+    a img {
+        float: right;
+    }
 }
