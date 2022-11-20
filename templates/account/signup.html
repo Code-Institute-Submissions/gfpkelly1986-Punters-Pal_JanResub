@@ -35,7 +35,7 @@
       <div class="col-sm-12 col-md-8 m-auto">
         <h3 class="mt-5 heading-style">Create an account with Google</h3>
         
-        <div class="g-signin2" href="{% url 'new-entry' %}" data-onsuccess="onSignIn"></div>
+        <div class="g-signin2" data-onsuccess="onSignIn" data-login_uri="https://punters-pal.herokuapp.com/create_new_entry"></div>
       </div>
     </div>
   </div>
@@ -43,6 +43,8 @@
 
 <script src="https://accounts.google.com/gsi/client" async defer></script>
 <script src="https://apis.google.com/js/platform.js?" async defer></script>
+
+
 <script>
   document.getElementById("myIMG2").style.maxHeight = "250px";
   document.getElementById("myIMG2").style.maxWidth = "80%";
