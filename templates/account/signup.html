@@ -29,19 +29,13 @@
             <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
             {% endif %}
             <button type="submit">{% trans "&nbsp&nbsp&nbspSign Up&nbsp&nbsp&nbsp" %} &raquo;</button>
+          </form>
         </div>
       </div>
       <div class="col-sm-12 col-md-8 m-auto">
         <h3 class="mt-5 heading-style">Create an account with Google</h3>
-        <div id="g_id_onload" data-client_id="479612238169-k979d650mm7oa5fr12n84m26fmtihocq.apps.googleusercontent.com"
-          data-context="signup" data-ux_mode="redirect" data-login_uri="/create_new_entry" data-nonce=""
-          data-auto_select="true" data-itp_support="true">
-        </div>
-
-        <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="filled_black"
-          data-text="signup_with" data-size="large" data-logo_alignment="left">
-        </div>
-        </form>
+        
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
       </div>
     </div>
   </div>
@@ -54,3 +48,14 @@
   document.getElementById("myIMG2").style.maxWidth = "80%";
 </script>
 {% endblock %}
+
+
+
+<!-- <div id="g_id_onload" data-client_id="479612238169-k979d650mm7oa5fr12n84m26fmtihocq.apps.googleusercontent.com"
+          data-context="signup" data-ux_mode="redirect" data-login_uri="/create_new_entry" data-nonce=""
+          data-auto_select="true" data-itp_support="true">
+        </div>
+
+        <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="filled_black"
+          data-text="signup_with" data-size="large" data-logo_alignment="left">
+        </div> -->
