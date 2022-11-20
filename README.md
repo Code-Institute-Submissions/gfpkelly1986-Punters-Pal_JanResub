@@ -5,13 +5,7 @@
 
 # <p href="#intro" id="intro"> - Intended Purpose of This Website:</p>
 
-  - Fill in: What the purpose of the website is.
-
-  - Fill in: What the purpose of the website is.
-
-  - Fill in: What the purpose of the website is.
-
-  - Fill in: What the purpose of the website is.
+  - The intended purpose of this website was to build a simple diary that a race-goer could use to enter race information relating to a horses run. The user has access to a form field on login where they can quickly enter an entry to their diary. The diary is formatted to allow the user enter details about the track, race type, horses name, grade, distance, going, trainer, jockey, number of runners, resulting position of entry, result of the race (1,2,3), and a text area where they can enter some of their own insights about the race or why they are following the horse to begin with. Only registered users can use the diary feature. A blog was provided to give unregistered users something to browse after landing on the website.
 
 
 ## Table of contents
@@ -202,8 +196,14 @@
 # Design
 
   - Color Pallete
+    - #f4f5f7
+    - #261717
+    - #cdb06f
+    - #d9d3cf 
 
   - Fonts
+    - Railway
+    - Nunito
 
 <p align="center">
   <img src=""?raw=true alt=""></p>
@@ -251,38 +251,95 @@
 
 # Live Features
 
-  - Live Features
+  ## Landing page with option to create a new account.
 
 <p align="center">
-  <img src=""?raw=true alt=""></p>
+  <img src="static/images/readme-images/landing page.png"?raw=true alt="landing page feature"></p>
+
+  ## Sign up page. Users can use the custom styled all auth forms or use their google accounts to sign up/login.
+
+  <p align="center">
+  <img src="static/images/readme-images/sign-up-page.png"?raw=true alt="sign up page feature"></p>
+  <p align="center">
+  <img src="static/images/readme-images/google sign in.png"?raw=true alt="google sign in page feature"></p>
+  <p align="center">
+  <img src="static/images/readme-images/login.png"?raw=true alt="login feature"></p>
+
+  ## Custom styled form structured for input related to racing. User welcomed by name.
+
+  <p align="center">
+  <img src="static/images/readme-images/new-entry.png"?raw=true alt="new entry feature"></p>
+
+  ## Diary entries sorted and displayed nicely. Users can edit and delete entries in their diary.
+
+  <p align="center">
+  <img src="static/images/readme-images/diary entries.png"?raw=true alt="diary display feature"></p>
+  <p align="center">
+  <img src="static/images/readme-images/edit-entry.png"?raw=true alt="edit diary feature"></p>
+
+  ## Search diary by Horse Name to find selections.
+
+  <p align="center">
+  <img src="static/images/readme-images/search-entry.png"?raw=true alt="search entry feature"></p>
+
+  ## Blog content
+
+  <p align="center">
+  <img src="static/images/readme-images/blog-1.png"?raw=true alt="blog content"></p>
+  <p align="center">
+  <img src="static/images/readme-images/blog-2.png"?raw=true alt="blog content"></p>
+
+  ## Blog Detail
+  <p align="center">
+  <img src="static/images/readme-images/blog-detail.png"?raw=true alt="search entry feature"></p>
 
 
 <p align="right"><a href="#intro">Return to table of contents</a></p><p id="df"></p>
 
 # Desired Features
 
-  - Desired Features
+  ### Chat room
+    - Users given the opportunity to build a community and chat to like minded people
+  ### Search notes (All criteria)
+    - Users given the functionality to search the diary by any criteria they want to use
+  ### Expand information relating to an entry
+    - Users given another window where they can fill out detailed bio on any of their entries. Specific to the entry in question. Age, sire, value, breeder etc.
+  ### External API
+    - Use an external API to grab result data and populate the diary. API could also be used to access video content relating to each entry.
 
-<p align="center">
-  <img src=""?raw=true alt=""></p>
+  <p align="center">
+  <img src="static/images/readme-images/API.png"?raw=true alt="The betfair API"></p>
+
+  ### Full google auth functionality
+    - Currently users can only sign in with google via a seperate page. Users should have immediate sign-up/login functionality using googles custom buttons.
+  ### Batch diary entries
+    - When the diary has hundreds of entries it would be nice to have the ability to batch the entries by trainer, age, ability etc and store them together so they can be accessed more easily.
+
+
 
 <p align="right"><a href="#intro">Return to table of contents</a></p><p id="tpy"></p>
 
 # Testing (Python)
 
-  - Unit-Testing-Python
-
+  ### Run 14 automated tests using Python's UnitTest
+  
 <p align="center">
-  <img src=""?raw=true alt=""></p>
+  <img src="static/images/readme-images/test-forms.png"?raw=true alt="result of all tests"></p>
+
+  ### Coverage Report
+  <p align="center">
+  <img src="static/images/readme-images/test-views.png"?raw=true alt="coverage report"></p>
+
 
 <p align="right"><a href="#intro">Return to table of contents</a></p><p id="tjs"></p>
 
-# Testing (JavaScript)
+# Manual Testing
 
-  - Unit-Testing-JavaScript
+  ### Lighthouse Test
+  - 
 
 <p align="center">
-  <img src=""?raw=true alt=""></p>
+  <img src="static/images/readme-images/Lighthouse-report.png"?raw=true alt="Lighthouse Report"></p>
 
 <p align="right"><a href="#intro">Return to table of contents</a></p><p id="dep"></p>
 
