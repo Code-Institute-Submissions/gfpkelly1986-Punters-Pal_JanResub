@@ -309,4 +309,8 @@ background-image: linear-gradient(rgb(29, 26, 26), rgb(48, 18, 18));
         letter-spacing: normal;
         line-height: normal;
     }
+
+    .row {
+        --bs-gutter-x: 0;
+    }
 }
