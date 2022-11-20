@@ -2,7 +2,7 @@
 
 {% load i18n %}
 {% load crispy_forms_tags %}
-{% load socialaccount %}
+{% load account socialaccount %}
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block content %}
@@ -33,9 +33,11 @@
         </div>
       </div>
       <div class="col-sm-12 col-md-8 m-auto">
-        <h3 class="mt-5 heading-style">Create an account with Google</h3>
+        <a href="{% provider_login_url 'google' %}"><h3 class="mt-5 heading-style">Create an account with Google</h3></a>
+
+        <div class="g-signin2" data-auto_prompt="true" data-text="signup_with" data-login_uri="https://punters-pal.herokuapp.com/create_new_entry">
         
-        <div class="g-signin2" data-onsuccess="onSignIn" data-login_uri="https://punters-pal.herokuapp.com/create_new_entry"></div>
+        </div>
       </div>
     </div>
   </div>
