@@ -1,7 +1,7 @@
 # Punters Pal - A diary structred for, and aimed at, the Horse-Racing Community.
 
   <p align="center">
-  <img src=""?raw=true alt=""></p>
+  <img src="static/images/readme-images/Am-I-responsive.png"?raw=true alt="Responsive image of project"></p>
 
 # <p href="#intro" id="intro"> - Intended Purpose of This Website:</p>
 
@@ -18,8 +18,8 @@
 - <a href="#erd">ERD Diagram</a>
 - <a href="#lf">Live Features</a>
 - <a href="#df">Desired Features</a>
-- <a href="#tpy">Testing(Python)</a>
-- <a href="#tjs">Testing(Javascript)</a>
+- <a href="#tpy">Automated Testing(Python)</a>
+- <a href="#mnts">Manual Testing</a>
 - <a href="#dep">Deployment</a>
 - <a href="#b">Bugs During Development</a>
 - <a href="#ub">Unsolved Bugs</a>
@@ -322,6 +322,7 @@
 # Testing (Python)
 
   ### Run 14 automated tests using Python's UnitTest
+  - Testing here is for the diary app of this project.
   
 <p align="center">
   <img src="static/images/readme-images/test-forms.png"?raw=true alt="result of all tests"></p>
@@ -331,23 +332,54 @@
   <img src="static/images/readme-images/test-views.png"?raw=true alt="coverage report"></p>
 
 
-<p align="right"><a href="#intro">Return to table of contents</a></p><p id="tjs"></p>
+<p align="right"><a href="#intro">Return to table of contents</a></p><p id="mnts"></p>
 
 # Manual Testing
 
   ### Lighthouse Test
-  - 
+    - Lighouse report indicated good accesibility, SEO and Best practices scores.
 
 <p align="center">
   <img src="static/images/readme-images/Lighthouse-report.png"?raw=true alt="Lighthouse Report"></p>
+
+  ### HTML validator
+    - The HTML validator had issues with some of the django syntax but was otherwise passed as valid HTML.
+
+  <p align="center">
+  <img src="static/images/readme-images/html-testing-1.png"?raw=true alt="Lighthouse Report"></p>
+
+  ### CSS validator
+    - The CSS was passed by the validator as valid CSS.
+
+  <p align="center">
+  <img src="static/images/readme-images/CSS-validation.png"?raw=true alt="Lighthouse Report"></p>
+
+  ### Pycodestyle
+    - Pycodestyle linter was used in gitpod to test all the python code. The only issues were line too long errors in the original settings.py file and the urls.py file.
+
 
 <p align="right"><a href="#intro">Return to table of contents</a></p><p id="dep"></p>
 
 # Deployment
 
-  - Early Deployment
+  ### Early Deployment
+  - This project was deployed early using the following approach:
+    - Install django, gunicorn and supporting libraries including psycopg2
+    - Install cloudinary libraries
+    - Create a project, an app, and a requirements.txt file
+    - Add app to installed apps
+    - Migrate changes
+    - Runserver and test
+    - Create Heroku app
+    - Attatch to the database
+    - Set up env.py file and settings.py file
+    - Set static and media files to store in cloudinary
+    - Create a procfile
+    - Push code to github
+    - Deploy from heroku using git 
 
-  - Final Deployment
+  ### Final Deployment
+  - Set Debug to False for final deployment and remove commented out local database code.
 
 <p align="center">
   <img src=""?raw=true alt=""></p>
@@ -356,9 +388,15 @@
 
 # Bugs (During Development)
 
-  - Bug One
+  - Unable to get google authentication to work properly due to the random URI that gitpod generates. I could not get google to recognise the URI but managed a workaround for now. I might clone the project at a later date in VS code and add the full functionality in. At present the {% provider_login_url 'google' %} link will take you to the sign in page which runs the correct login URL on sign up.
 
-  - Bug Two
+  - Difficulty getting the bootstrap header to behave on various screen sizes. Setting the Viewport with to 70vw on the navbarbrand bootstrap class and floating the logo right solved this in the end.
+
+  - Inconsistent migration history. I two seperate instances of messing up the database history.
+
+  - One when we had to switch over to elephant sql for the database. I tried to use the local database to run some tests and when I went back to the deployment database it did not recognise me.
+
+  - Another instance was adding a social account to the database from the admin before I saved the django.contrib.sites to the APPS list in settings.py. I had to wipe the database and start again after making this mistake
 
 <p align="center">
   <img src=""?raw=true alt=""></p>
@@ -367,9 +405,8 @@
 
 # Bugs (Unsolved)
 
-  - Bug One
+  - The racetype charfield in the diaryentry model threw a not null exception even though other charfields did not. A value of race remains for the field value. I believe it was due to the fact that this field was added after the database was created. To solve it I might need to clean the database completely and delete the migrations file and re-make new migrations again.
 
-  - Bug Two
 
 <p align="center">
   <img src=""?raw=true alt=""></p>
@@ -378,9 +415,37 @@
 
 # Technologies Used
 
-  - Tech One
+  - Django
 
-  - Tech Two
+  - Python
+
+  - CSS
+
+  - Javascript
+
+  - HTML
+
+  - Bootstrap
+
+  - PostgreSQL
+
+# Libraries/Frameworks and Other Tools Used
+
+  - Balsamiq for wireframes
+
+  - Fiverr Logo maker for logo and favicon
+
+  - GitPod as the IDE
+
+  - Github for version control
+
+  - Django allauth (including social account)
+
+  - Django crispy forms
+
+  - gunicorn
+
+  - Cloudinary
 
 <p align="center">
   <img src=""?raw=true alt=""></p>
@@ -390,10 +455,12 @@
 # Credits
 
   - Images
+    - Pexels.com for most of the images. (Some imagery used in the blog is credited in the blog itself in the comments section)
 
   - Media
+    - The content for the blog is credited in the comments section of each post. 
 
-  - Walkthrough Code
+  - Walkthrough Code from Code Institute for the blog. Only minor style changes were made to the blog code.
 
   - Tutor Support
 
@@ -408,6 +475,18 @@
 
   - External Code
 
+    - This code was taken from stack overflow to help with using an anchor tag as a button to avoid nesting one inside the other and causing invalid HTML code.
+            <p>
+             a.button {<br>
+            -webkit-appearance: button;<br>
+            -moz-appearance: button;<br>
+            appearance: button;<br>
+            text-decoration: none;<br>
+            color: initial;<br>
+            }
+            </p>
+
+    - Bootstrap: Used for responsive footer and navbar and its grid layout.
 <p align="center">
   <img src=""?raw=true alt=""></p>
 
