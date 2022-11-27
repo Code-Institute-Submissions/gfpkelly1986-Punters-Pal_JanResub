@@ -92,7 +92,7 @@
   ### Acceptance Criteria
    - All-auth is implemented correctly.
 
-   - Users can login successfully with an email address.
+   - Users can login successfully with allauth.
 
   ### Tasks
    - Implement all-auth for user sign in.
@@ -343,19 +343,63 @@
   <img src="static/images/readme-images/Lighthouse-report.png"?raw=true alt="Lighthouse Report"></p>
 
   ### HTML validator
-    - The HTML validator had issues with some of the django syntax but was otherwise passed as valid HTML.
+    - HTML validation was done using the W3C validator and the some issues were found and subsequently fixed. There is an error which persists in relation to an unclosed ul tag and a trailing p tag which I believe to be related to misinterpreting django syntax when parsing the code for the pages affected.
 
   <p align="center">
-  <img src="static/images/readme-images/html-testing-1.png"?raw=true alt="Lighthouse Report"></p>
+  <img src="static/images/readme-images/homepage-validation.png"?raw=true alt="Validator Testing"></p>
+
+  <p align="center">
+  <img src="static/images/readme-images/signup-noerrors.png"?raw=true alt="Validator Testing"></p>
+
+  <p align="center">
+  <img src="static/images/readme-images/edit-entry-no-errors.png"?raw=true alt="Validator Testing"></p>
+
+  <p align="center">
+  <img src="static/images/readme-images/blog-no-errors.png"?raw=true alt="Validator Testing"></p>
+
+  - These warnings appear for some of the pages in which there are no unclosed ul tags or trailing p tags/div tags. Errors most likely due to misinterpreting django syntax.
+  <p align="center">
+  <img src="static/images/readme-images/django-syntax-error.png"?raw=true alt="Validator Testing - Django syntax error"></p>
+
+  <p align="center">
+  <img src="static/images/readme-images/Odd-errors.png"?raw=true alt="Validator Testing - Django syntax error"></p>
+
+  - Some errors fixed during validation
+  <p align="center">
+  <img src="static/images/readme-images/Fixing-errors-sign-up.png"?raw=true alt="Validator Testing"></p>
 
   ### CSS validator
     - The CSS was passed by the validator as valid CSS.
 
   <p align="center">
-  <img src="static/images/readme-images/CSS-validation.png"?raw=true alt="Lighthouse Report"></p>
+  <img src="static/images/readme-images/CSS-validation.png"?raw=true alt="CSS Validator"></p>
 
   ### Pycodestyle
     - Pycodestyle linter was used in gitpod to test all the python code. The only issues were line too long errors in the original settings.py file and the urls.py file.
+
+  ### User Story Validation/Acceptance Criteria 1
+  - User Story to test and validate:
+
+    - As an unregistered user I can have the option to authenticate my email address as an option during sign in
+
+    ### Acceptance Criteria
+      - All-auth is implemented correctly.
+      - Users can login successfully with allauth.
+
+  ### Validation: 
+    - When the user clicks on the signup button in the navbar they are brought to a page to create a new account. During this process they are using the all-auth library. The user can enter their email address and select a suitable password and username. Once the form is submitted the user is taken successfully to the intended redirect url of 'create-new-entry'. The user is presented with a form which they can fill out if they wish to add a new entry to their diary.
+
+
+### User Story Validation/Acceptance Criteria 2
+  - User Story to test and validate:
+
+    - As an unregistered user I can have the option to authenticate myself using my google account as an option during sign in
+
+    ### Acceptance Criteria
+      - Users can succesfully login with their google account credentials.
+
+  ### Validation: 
+    - When the user is taken to the sign up page they are presented with a link which, if clicked, will bring them to a page that will allow them to use their google account details to set up an account with this website. When they select their account from the google popup window they are redirected to the correcr redirect url and are greeted by their name they use with their google account. Their details are successfully registered within the django admin portal.
 
 
 <p align="right"><a href="#intro">Return to table of contents</a></p><p id="dep"></p>
