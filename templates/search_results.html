@@ -14,15 +14,15 @@
     <div class="row">
         <div class="col"></div>
         <div class="col-sm-10 col-md-8 col-lg-8 mt-3 ms-auto me-auto">
-            <h3><ins>Race Title:</ins> <span >&nbsp&nbsp&nbsp{{ entry.race_title }}</span></h3>
-            <p class="paragraphtext mt-3"><strong>Grade of the race:</strong>&nbsp&nbsp&nbsp<span
+            <h3><ins>Race Title:</ins> <span >&nbsp;&nbsp;&nbsp;{{ entry.race_title }}</span></h3>
+            <p class="paragraphtext mt-3"><strong>Grade of the race:</strong>&nbsp;&nbsp;&nbsp;<span
                     >{{ entry.grade }}</span></p>
-            <p class="paragraphtext"><strong>Distance the race was run at:</strong>&nbsp&nbsp&nbsp<span
+            <p class="paragraphtext"><strong>Distance the race was run at:</strong>&nbsp;&nbsp;&nbsp;<span
                     >{{ entry.distance }}</span></p>
-            <p class="paragraphtext"><strong>The condition of the ground:</strong>&nbsp&nbsp&nbsp<span
+            <p class="paragraphtext"><strong>The condition of the ground:</strong>&nbsp;&nbsp;&nbsp;<span
                     >{{ entry.going }}</span></p>
             <hr>
-            <h2><strong>Entry Name:</strong>&nbsp&nbsp&nbsp<span >{{ entry.horse_name }}</span></h2>
+            <h2><strong>Entry Name:</strong>&nbsp;&nbsp;&nbsp;<span >{{ entry.horse_name }}</span></h2>
             <div class="row card text-center">
                 <div class="col mb-4 mt-4 .card-body paragraphtext ">
                     {{ entry.note_detail }}
@@ -30,19 +30,19 @@
             </div>
             <hr>
 
-            <p class="paragraphtext"><strong><ins>Winner of the race:</ins></strong>&nbsp&nbsp&nbsp<span
+            <p class="paragraphtext"><strong><ins>Winner of the race:</ins></strong>&nbsp;&nbsp;&nbsp;<span
                     ><mark>{{ entry.result_1 }}</mark></span></p>
-            <p class="paragraphtext"><strong>2nd place finish:</strong>&nbsp&nbsp&nbsp<span
+            <p class="paragraphtext"><strong>2nd place finish:</strong>&nbsp;&nbsp;&nbsp;<span
                     >{{ entry.result_2 }}</span></p>
-            <p class="paragraphtext"><strong>3rd place finish:</strong>&nbsp&nbsp&nbsp<span
+            <p class="paragraphtext"><strong>3rd place finish:</strong>&nbsp;&nbsp;&nbsp;<span
                     >{{ entry.result_3 }}</span></p>
-            <p class="paragraphtext"><strong>Finish position of noted entry:</strong>&nbsp&nbsp&nbsp<span
+            <p class="paragraphtext"><strong>Finish position of noted entry:</strong>&nbsp;&nbsp;&nbsp;<span
                     >{{ entry.result_of_entry }}</span></p>
-            <p class="paragraphtext"><strong>Trainer of noted entry:</strong>&nbsp&nbsp&nbsp<span
+            <p class="paragraphtext"><strong>Trainer of noted entry:</strong>&nbsp;&nbsp;&nbsp;<span
                     >{{ entry.trainer }}</span></p>
-            <p class="paragraphtext"><strong>Jockey that rode on the day:</strong>&nbsp&nbsp&nbsp<span
+            <p class="paragraphtext"><strong>Jockey that rode on the day:</strong>&nbsp;&nbsp;&nbsp;<span
                     >{{ entry.jockey }}</span></p>
-            <p class="paragraphtext"><strong>The number of runners that ran in the race:</strong>&nbsp&nbsp&nbsp<span
+            <p class="paragraphtext"><strong>The number of runners that ran in the race:</strong>&nbsp;&nbsp;&nbsp;<span
                     >{{ entry.num_of_runners }}</span></p>
 
             <a href="edit_entry/{{ entry.id }}" class="mt-4 mb-3 me-5 diary-button-pos">Edit This Entry</a>

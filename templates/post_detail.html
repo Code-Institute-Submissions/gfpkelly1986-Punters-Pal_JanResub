@@ -13,7 +13,7 @@
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 {% if "placeholder" in post.featured_image.url %}
-                <img src="https://res.cloudinary.com/dqk6bfwfk/image/upload/v1668865306/kauto-portrait_pftofm.jpg" width="100%" alt="placeholder image">
+                <img class="img-detail-width" src="https://res.cloudinary.com/dqk6bfwfk/image/upload/v1668865306/kauto-portrait_pftofm.jpg" alt="placeholder image">
                 {% else %}
                 <img src="{{ post.featured_image.url }}" width="100%" id="myIMG" alt="featured image">
                 {% endif %}
@@ -30,7 +30,7 @@
                     {{ post.content | linebreaks | safe }}
                 </p>
                 <div class="row">
-                    <div class="col-1">
+                    <div class="col-4">
                         <strong>    
                             {% if user.is_authenticated %}
                             <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
@@ -50,15 +50,18 @@
                             {% endif %}
                             <span class="text-secondary">{{ post.number_of_likes }}</span>
                         </strong>
-                        <strong class="text-secondary"><i class="far fa-heart"></i>{{ post.number_of_likes }} </strong>
+                        <!-- <strong class="text-secondary"><i class="far fa-heart"></i>{{ post.number_of_likes }} </strong> -->
+                        <h6>Comments</h6>
+                        <div class="col-1">
+                            {% with comments.count as total_comments %}
+                            <strong class="text-secondary"><i class="far fa-comments"></i>
+                                {{ total_comments}}
+                            </strong>
+                            {% endwith %}
+                        </div>
                     </div>
-                    <div class="col-1">
-                        {% with comments.count as total_comments %}
-                        <strong class="text-secondary"><i class="far fa-comments"></i>
-                            {{ total_comments}}
-                        </strong>
-                        {% endwith %}
-                    </div>
+                    
+
                 </div>
             </div>
         </div>

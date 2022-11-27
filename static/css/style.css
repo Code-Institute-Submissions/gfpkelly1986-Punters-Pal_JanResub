@@ -307,6 +307,12 @@ background-image: linear-gradient(rgb(29, 26, 26), rgb(48, 18, 18));
     font-size: 1.4rem;
 }
 
+/* ---- Blog image detail width ---- */
+
+.img-detail-width {
+    width: 100%;
+}
+
 /* ---- Media Queries ---- */
 
 @media screen and (max-width: 576px){
