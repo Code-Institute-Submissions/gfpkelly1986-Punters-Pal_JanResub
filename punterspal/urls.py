@@ -23,7 +23,6 @@ from blog import views as blog_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', diary_views.get_landing_page, name='landing-page'),
-    # path('sign-up', views.get_sign_up_page, name='sign-up'),
     path('accounts/', include('allauth.urls')),
     path('create_new_entry', diary_views.NoteDetail.as_view(), name='new-entry'),
     path('diary_display.html', diary_views.ShowDiaryEntries.as_view(), name='all-entries'),
