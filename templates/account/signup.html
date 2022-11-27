@@ -28,13 +28,12 @@
             {% if redirect_field_value %}
             <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
             {% endif %}
-            <button type="submit">{% trans "&nbsp&nbsp&nbspSign Up&nbsp&nbsp&nbsp" %} &raquo;</button>
+            <button type="submit">{% trans "&nbsp; &nbsp; &nbsp;Sign Up&nbsp; &nbsp; &nbsp;" %} </button>
           </form>
         </div>
       </div>
       <div class="col-sm-12 col-md-8 m-auto">
         <a href="{% provider_login_url 'google' %}"><h3 class="mt-5 heading-style">Create an account with Google</h3></a>
-        </div>
       </div>
     </div>
   </div>
