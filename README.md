@@ -404,25 +404,175 @@
 
 <p align="right"><a href="#intro">Return to table of contents</a></p><p id="dep"></p>
 
-# Deployment
+# Deployment Guide
 
-  ### Early Deployment
-  - This project was deployed early using the following approach:
-    - Install django, gunicorn and supporting libraries including psycopg2
-    - Install cloudinary libraries
-    - Create a project, an app, and a requirements.txt file
-    - Add app to installed apps
-    - Migrate changes
-    - Runserver and test
+  ### Setting up the application before deployment:
+
+  - Install the LTS(Long Term Support) version of Django onto your machine.
+  
+    > pip3 install 'django<4'
+    
+  - Install Gunicorn using the command:
+
+    > pip3 install gunicorn
+    
+      - Gunicorn is a web server that is designed to run Python web applications. It does this by using the WSGI (Web Server Gateway Interface) protocol, which is a standard way for Python web applications to interface with web servers. A web server is a software program that runs on a computer and listens for requests from client computers over the internet. When a request is received, the web server processes the request and sends back a response.
+  
+  - You will need install the  'dj-database-url' package so can use its parse() function which takes a database URL as an argument. The parse function allows you to specify your database connection settings in your Django project's settings file. The command to install this package is:
+
+    > pip3 install dj_database_url
+
+  - In your settings file you will need to set your database connection:
+
+    > DATABASES = {
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+            }
+
+      - The 'DATABASE_URL' in this example is set to a postgres database url in a separate env.py file. This allows you to commit changes to the settings file to GitHub but have sensitive information like Secret Keys and Database Url's kept hidden. The env.py file is then added to the .gitignore file.
+
+  - Install psycopg2 using the following command:
+
+    > pip3 install psycopg2
+
+      - psycopg2 is a PostgreSQL adapter for Python. This allows Python scripts to connect to a PostgreSQL database.
+  
+  - If your project has image and media requirements then you may want to use Cloudinary to host your files. To install run the following command:
+
+    > pip3 install dj3-cloudinary-storage.
+
+      - dj3-cloudinary-storage is a Django storage backend for the Cloudinary media management service. It allows you to store and serve media files.
+
+  - Create a requirements.txt file:
+
+    > pip3 freeze --local > requirements.txt
+
+      - This will be needed by Heroku to build the needed requirements for the project to run.
+
+  - Create a new Django project:
+    > django-admin startproject -project name here.-
+
+  - Create an 'app' (Each app in a django project should handle a specific bit of functionality):
+
+    > python3 manage.py startapp -app name goes here-
+  
+  - Add app to the installed apps variable in settings.py
+
+    > In the INSTALLED_APPS list:<br> 
+      [...,<br>
+        'app_name goes here',<br>
+        ...]
+
+  - Migrate Changes (These migrations are for the apps that were installed out of the box.)
+
+    > python3 manage.py migrate
+
+  - Run local server and test:
+
+    > python3 manage.py runserver
+    
+      - If all steps were correctly followed you will see a django congratulations page when you run the server.
+  
+  - END APPLICATION SET UP.
+
+  ### How to deploy the project to Heroku.
+
     - Create Heroku app
     - Attatch to the database
-    - Set up env.py file and settings.py file
-    - Set static and media files to store in cloudinary
-    - Create a procfile
-    - Push code to github
-    - Deploy from heroku using git 
+    - Prepare settings and environment
+    - Set up Cloudinary for static and media file storage.
+    - Create some necessary folders and files on the top level directory
+<hr>
+  - Create a new Heroku App:
+
+      1. Navigate to Heroku dashboard once you have set up an account.<br> 
+      2. Choose an app name and a location (Europe or United States).<br>
+      3. Add a database to the app resources. Navigate to the resources tab for this, select Add-ons and add 'Heroku PostGres'.
+      4. Navigate to settings tab and click on reveal config vars and copy the DATABASE_URL.
+
+  - Attach the database:
+      1. Create an env.py file in the top level directory of your workspace.
+      2. Within this file, import the os library.
+      3. Set the DATABASE_URL to the copied Heroku URL<br>
+        - os.environ["DATABASE_URL"]='The copied URL'
+      4. Set a SECRET_KEY environment variable
+        - os.environ["SECRET_KEY"]='Create your secret key'
+      5. Head back to Heroku and add your new SECRET_KEY variable to the config vars.
+
+  - Prepare settings and environment:
+      1. Import os and dj_database_url at the top of the settings.py file
+      2. Write code to look for env.py file and import it if found. This will be found in local development enviornment only <br>
+        - if os.path.isfile('env.py'):<br>
+          import env
+      3. Overwrite any insecure secret keys in the settings.py file
+        - SECRET_KEY = os.environ.get('SECRET_KEY')
+      4. Comment out the constant DATABASES which connects the local sql lite database and create a new variable that connects to the Heroku database:
+        - <br>DATABASES = {<br>
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))<br>}
+      5. Save files and run:
+        - python3 manage.py migrate again.
+
+  - Set up Cloudinary for static and media file storage.
+      1. Set up an account
+      2. Navigate to the dashboard and copy the API Environment variable
+      3. Copy this to a CLOUDINARY_URL variable in the env.py file.
+        - os.environ['CLOUDINARY_URL']= "paste URL in here"
+      4. Add this URL to a the convig vars in Heroku.
+      5. Temporarily disable 'collectstatic' in Heroku by creating a constant called DASABLE_COLLECTSTATIC and set its value to 1.
+      6. Make sure all Cloundinary libraries are installed in the apps section of the settings file as follows, noting the order:
+        - <br>INSTALLED_APPS = [ <br>
+          'cloudinary_storage',<br>
+          'django.contrib.staticfiles',<br>
+          'cloudinary',<br>
+          ]
+      7. You will also need to tell django where to look for the files:
+    
+          STATIC_URL = 'The URL prefix for static files in your Django project'
+
+          STATICFILES_STORAGE = 'This specifies the storage backend to use for static files'
+
+          STATICFILES_DIRS = [This is a list of directories where Django will look for static files]
+
+          STATIC_ROOT = os.path.join(
+            This is the directory where Django will collect all of the static files from the STATICFILES_DIRS directories. The collected static files will be stored in this directory, and can then be served by a web server.
+          )
+
+          MEDIA_URL = 'This is the URL prefix for media files'
+
+          DEFAULT_FILE_STORAGE = 'Name of a backend storage class'
+    
+      - Some useful links on this topic:
+
+        - [Static files in Django](" https://docs.djangoproject.com/en/3.1/howto/static-files/ ")
+        - [Managing static files](" https://docs.djangoproject.com/en/3.1/ref/settings/#std:setting-STATICFILES_STORAGE ")
+        - [Storage backends](" https://docs.djangoproject.com/en/3.1/ref/files/storage/#module-django.core.files.storage ")
+
+        - [Django storage backend for Cloudinary](" https://github.com/cloudinary/dj3-cloudinary-storage ") 
+        - [Integrating Django and Cloudinary - Part 1](" https://cloudinary.com/blog/integrating_django_and_cloudinary_part_1 ")
+        - [Integrating Django and Cloudinary - Part 2](" https://cloudinary.com/blog/integrating_django_and_cloudinary_part_2 ")
+        - [Cloudinary Django SDK](" https://cloudinary.com/documentation/django_integration")
+
+      8. Link the file to the templates directory in Heroku:
+        - TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+      9. Place this variable as the value for the DIRS key in the TEMPLATES list in settings.py
+      10. Add Heroku hostname to the ALLOWED HOSTS list in settings.py
+        - ALLOWED_HOSTS is a security setting in Django that specifies a list of host/domain names that your Django site is allowed to serve<br>
+        It is used to prevent an attacker from using your Django site as a host for phishing attacks.
+      
+  - Create some necessary folders and files on the top level directory and push changes to GitHub
+    1. Create media, static and templates folders in the top level directory
+    2. Create a Procfile
+      - A Procfile is a text file that is used to specify the commands that are needed to start your application. It is used in web applications that are deployed to a Platform as a Service (PaaS) provider, such as Heroku
+    3. In the Procfile type in the command: web: gunicorn PROJ_NAME.wsgi
+      - The gunicorn command is used to start the Gunicorn web server
+    4. Commit and push all code to git hub
+    5. Choose manual or automatic deploys in Heroku under the 'deploy tab'.
+    6. Run and test project works when deployed.
+
+  - **SIDENOTE: Early deployment is best with a Django project to avoid complicated errors and issues further into a Project.**
+<hr>
 
   ### Final Deployment
+
   - Set Debug to False for final deployment and remove commented out local database code.
 
 <p align="center">
@@ -494,7 +644,7 @@
 <p align="center">
   <img src=""?raw=true alt=""></p>
 
-<p align="right"><a href="#intro">Return to table of contents</a></p><p id="tu"></p>
+<p align="right"><a href="#intro">Return to table of contents</a></p><p id="cr"></p>
 
 # Credits
 
