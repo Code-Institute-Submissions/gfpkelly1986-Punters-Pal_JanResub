@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404, reverse
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post
@@ -34,6 +36,7 @@ class PostDetail(View):
             },
         )
 
+    @method_decorator(login_required)
     def post(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
@@ -68,6 +71,7 @@ class PostDetail(View):
 
 class PostLike(View):
 
+    @method_decorator(login_required)
     def post(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Post, slug=slug)
 

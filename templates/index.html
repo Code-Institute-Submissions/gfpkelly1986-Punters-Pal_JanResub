@@ -23,9 +23,11 @@
           <p class="card-text">For the racing enthusiast to keep track of horses they want to follow.</p>
           <p class="card-text">Our diary is pre-formatted to suit racing data so you can quickly record important
             information about a horses run</p>
+          {% if not user.is_authenticated %}
           <a href="{% url 'account_signup' %}" class="button btn mt-4"
             style="background-color:#cdb06f; color:black;">Create
             an account</a>
+          {% endif %}
         </div>
       </div>
     </div>

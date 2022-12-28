@@ -1,4 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 from django.conf import settings
 from .models import DiaryEntry
 from diary.forms import NewEntryForm
@@ -11,21 +13,27 @@ def get_landing_page(request):
     return render(request, 'index.html')
 
 
+@login_required(login_url='/accounts/signup/')
 def get_create_entry_page(request):
     return render(request, 'create_new_entry.html')
 
 
+@login_required()
 def delete_entry(request, entry_id):
     entries = DiaryEntry.objects.all()
     entry = get_object_or_404(entries, id=entry_id)
-    entry.delete()
-    return redirect('all-entries')
+    if entry.created_by != request.user:
+        return render(request, '404.html')
+    else:
+        entry.delete()
+        return redirect('all-entries')
 
 
 def error_404_view(request, exception):
     return render(request, '404.html')
 
 
+@method_decorator(login_required, name='dispatch')
 class ShowDiaryEntries(View):
 
     def get(self, request, *args, **kwargs):
@@ -39,6 +47,7 @@ class ShowDiaryEntries(View):
             })
 
 
+@method_decorator(login_required, name='dispatch')
 class SearchResults(View):
 
     def post(self, request, *args, **kwargs):
@@ -56,19 +65,23 @@ class SearchResults(View):
         )
 
 
+@method_decorator(login_required, name='dispatch')
 class EditDiaryEntry(View):
 
     def get(self, request, entry_id, *args, **kwargs):
         entries = DiaryEntry.objects.all()
         entry = get_object_or_404(entries, id=entry_id)
-        edit_form = NewEntryForm(instance=entry)
-        return render(
-            request,
-            'edit_entry.html',
-            {
-                'edit_form': edit_form
-            }
-        )
+        if entry.created_by != request.user:
+            return render(request, '404.html')
+        else:
+            edit_form = NewEntryForm(instance=entry)
+            return render(
+                request,
+                'edit_entry.html',
+                {
+                    'edit_form': edit_form
+                }
+            )
 
     def post(self, request, entry_id, *args, **kwargs):
         entries = DiaryEntry.objects.all()
@@ -81,6 +94,10 @@ class EditDiaryEntry(View):
 
 
 class NoteDetail(View):
+
+    @method_decorator(login_required)
+    def dispatch(self, request, *args, **kwargs):
+        return super().dispatch(request, *args, **kwargs)
 
     def get(self, request, *args, **kwargs):
         entry_form = NewEntryForm()
