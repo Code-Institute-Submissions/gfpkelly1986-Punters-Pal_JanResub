@@ -542,14 +542,14 @@
     
       - Some useful links on this topic:
 
-        - [Static files in Django](" https://docs.djangoproject.com/en/3.1/howto/static-files/ ")
-        - [Managing static files](" https://docs.djangoproject.com/en/3.1/ref/settings/#std:setting-STATICFILES_STORAGE ")
-        - [Storage backends](" https://docs.djangoproject.com/en/3.1/ref/files/storage/#module-django.core.files.storage ")
+        - [Static files in Django](https://docs.djangoproject.com/en/3.1/howto/static-files/ )
+        - [Managing static files](https://docs.djangoproject.com/en/3.1/ref/settings/#std:setting-STATICFILES_STORAGE)
+        - [Storage backends](https://docs.djangoproject.com/en/3.1/ref/files/storage/#module-django.core.files.storage)
 
-        - [Django storage backend for Cloudinary](" https://github.com/cloudinary/dj3-cloudinary-storage ") 
-        - [Integrating Django and Cloudinary - Part 1](" https://cloudinary.com/blog/integrating_django_and_cloudinary_part_1 ")
-        - [Integrating Django and Cloudinary - Part 2](" https://cloudinary.com/blog/integrating_django_and_cloudinary_part_2 ")
-        - [Cloudinary Django SDK](" https://cloudinary.com/documentation/django_integration")
+        - [Django storage backend for Cloudinary](https://github.com/cloudinary/dj3-cloudinary-storage) 
+        - [Integrating Django and Cloudinary - Part 1](https://cloudinary.com/blog/integrating_django_and_cloudinary_part_1)
+        - [Integrating Django and Cloudinary - Part 2](https://cloudinary.com/blog/integrating_django_and_cloudinary_part_2)
+        - [Cloudinary Django SDK](https://cloudinary.com/documentation/django_integration)
 
       8. Link the file to the templates directory in Heroku:
         - TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
