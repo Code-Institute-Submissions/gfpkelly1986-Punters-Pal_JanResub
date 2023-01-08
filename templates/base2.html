@@ -53,13 +53,22 @@
           </li>
         </ul>
         {% block search %}
-        <form class="d-flex" method="POST" action="{% url 'search-results' %}">
+        <form class="d-flex mx-auto" method="POST" action="{% url 'search-results' %}">
           {% csrf_token %}
           <input class="form-control me-2" type="search" placeholder="Search by Horse Name" name="diary-search"
             aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
         {% endblock %}
+        {% else %}
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link pe-5" aria-current="page" href="{% url 'account_signup' %}">Sign-Up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link pe-5" href="{% url 'account_login' %}">Login</a>
+          </li>
+        </ul>
         {% endif %}
       </div>
     </div>
