@@ -54,15 +54,17 @@ class SearchResults(View):
         entries = DiaryEntry.objects.all()
         search_entry = request.POST['diary-search']
         entry = get_object_or_404(entries, horse_name=search_entry)
-
-        return render(
-            request,
-            'search_results.html',
-            {
-                'search_entry': search_entry,
-                'entry': entry
-            }
-        )
+        if entry.created_by != request.user:
+            return render(request, '404.html')
+        else:
+            return render(
+                request,
+                'search_results.html',
+                {
+                    'search_entry': search_entry,
+                    'entry': entry
+                }
+            )
 
 
 @method_decorator(login_required, name='dispatch')
